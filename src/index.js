@@ -18,31 +18,37 @@ class Board extends React.Component {
     return (
       <Square
         value={this.props.squares[i]}
+        key={i}
         onClick={() => this.props.onClick(i)}
       />
     );
   }
 
+  // Got this idea from: https://blog.cloudboost.io/for-loops-in-react-render-no-you-didnt-6c9f4aa73778
+  renderBoard() {
+    let currentSquare = 0;
+    let rows = [];
+
+    for (let j = 0; j < BoardConfig.numRows; j++) {
+      let columns = [];
+      for (let k = 0; k < BoardConfig.numColumns; k++) {
+        columns.push(
+          this.renderSquare(currentSquare)
+        );
+        currentSquare += 1;
+      }
+      rows.push(
+        <div className="board-row" key={j}>
+          {columns}
+        </div>
+      );
+    }
+
+    return rows;
+  }
+
   render() {
-    return (
-      <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
-    );
+    return this.renderBoard();
   }
 }
 
@@ -153,19 +159,22 @@ function calculateWinner(squares) {
   return null;
 }
 
+const BoardConfig = {
+  numRows: 3,
+  numColumns: 3
+}
+
 class Index {
   constructor(at) {
     this.at = at;
-    this._numRows = 3;
-    this._numColumns = 3;
   }
 
   row() {
-    return Math.floor(this.at/this._numRows);
+    return Math.floor(this.at/BoardConfig.numRows);
   }
 
   column() {
-    return this.at % this._numColumns;
+    return this.at % BoardConfig.numColumns;
   }
 }
 
