@@ -2,6 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+function Sort(props) {
+  return (
+    <button
+    onClick={props.onClick}
+    >
+      Sort by {props.value}
+    </button>
+  );
+}
+
 function Square(props) {
   return (
     <button
@@ -62,6 +72,7 @@ class Game extends React.Component {
       }],
       stepNumber: 0,
       xIsNext: true,
+      sortIsAscending: true,
     };
   }
 
@@ -90,11 +101,23 @@ class Game extends React.Component {
     });
   }
 
-  render() {
-    const history = this.state.history;
-    const current = history[this.state.stepNumber];
-    const winner = calculateWinner(current.squares);
+  handleSortClick() {
+    this.setState({
+      sortIsAscending: !this.state.sortIsAscending,
+    });
+  }
 
+  renderSort() {
+    return (
+      <Sort
+        value={this.state.sortIsAscending ? 'Desending' : 'Ascending'}
+        onClick={() => this.handleSortClick()}
+      />
+    );
+  }
+
+  renderMoves() {
+    const history = this.state.history;
     const moves = history.map((step, move) => {
       let desc;
       if (move) {
@@ -115,6 +138,16 @@ class Game extends React.Component {
       );
     });
 
+    return (
+      this.state.sortIsAscending ? moves : moves.reverse()
+    );
+  }
+
+  render() {
+    const history = this.state.history;
+    const current = history[this.state.stepNumber];
+    const winner = calculateWinner(current.squares);
+
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
@@ -132,7 +165,10 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{moves}</ol>
+          <div className="move-list">
+            <div className="moves">Moves | {this.renderSort()}</div>
+            <ol reversed={this.state.sortIsAscending ? false : true}>{this.renderMoves()}</ol>
+          </div>
         </div>
       </div>
     );

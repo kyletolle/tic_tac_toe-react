@@ -52,3 +52,11 @@ ol, ul {
 .current-step {
   font-weight: bold;
 }
+
+.moves {
+  padding-top: 10px;
+}
+
+.move-list ol {
+  margin-top: 0;
+}
