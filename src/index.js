@@ -103,7 +103,8 @@ class Game extends React.Component {
     const current = history[history.length - 1];
     const squares = current.squares.slice()
     const contest = new Contest(squares)
-    if (contest.hasEnded() || squares[i]) {
+    const squareAlreadyFilled = squares[i];
+    if (squareAlreadyFilled || contest.hasEnded()) {
       return;
     }
     squares[i] = this.state.xIsNext ? 'X' : 'O';
@@ -164,11 +165,12 @@ class Game extends React.Component {
     const current = history[this.state.stepNumber];
     const contest = new Contest(current.squares);
     contest.hasEnded()
-    const winner = contest.winner;
 
     let status;
-    if (winner) {
-      status = 'Winner: ' + winner;
+    if (contest.isADraw()) {
+      status = 'Draw!'
+    } else if (contest.hasWinner()) {
+      status = 'Winner: ' + contest.winner;
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
@@ -226,8 +228,22 @@ class Contest {
     return false;
   }
 
+  isADraw() {
+    return !this.hasWinner() && this._allSquaresAreFilled();
+  }
+
   hasEnded() {
-    return this.hasWinner();
+    return this.hasWinner() || this.isADraw();
+  }
+
+  _allSquaresAreFilled() {
+    let numFilledSquares = 0;
+    for (let i = 0; i < this._squares.length; i++) {
+      if (this._squares[i] != null) {
+        numFilledSquares += 1;
+      }
+    }
+    return numFilledSquares === (BoardConfig.numRows * BoardConfig.numColumns)
   }
 }
 
