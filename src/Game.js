@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Sort from './Sort';
-import BoardConfig from './BoardConfig';
 import Board from './Board';
 import Contest from './Contest';
+import SquareIndex from './SquareIndex';
 
 class Game extends Component {
   constructor(props) {
@@ -65,7 +65,7 @@ class Game extends Component {
     const moves = history.map((step, move) => {
       let desc;
       if (move) {
-        const index = new Index(step.indexClicked);
+        const index = new SquareIndex(step.indexClicked);
         desc = 'Go to move #' + move + ' at [' + index.row() + ',' + index.column() + ']';
       } else {
         desc = 'Go to game start';
@@ -120,20 +120,6 @@ class Game extends Component {
         </div>
       </div>
     );
-  }
-}
-
-class Index {
-  constructor(at) {
-    this.at = at;
-  }
-
-  row() {
-    return Math.floor(this.at/BoardConfig.numRows);
-  }
-
-  column() {
-    return this.at % BoardConfig.numColumns;
   }
 }
 
