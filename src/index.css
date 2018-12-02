@@ -25,15 +25,15 @@ button {
   background: #fff;
   border: 1px solid #999;
   float: left;
-  font-size: 48px;
+  font-size: 72px;
   font-weight: bold;
-  line-height: 58px;
-  height: 58px;
+  line-height: 82px;
+  height: 82px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 58px;
+  width: 82px;
 }
 
 .square:focus {
