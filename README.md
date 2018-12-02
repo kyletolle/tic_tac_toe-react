@@ -1,3 +1,21 @@
+# Tic Tac Toe
+## in React
+
+Followed the [tutorial](https://reactjs.org/tutorial/tutorial.html) for [React](https://reactjs.org/) to build this game and learn the library.
+
+Includes these extras on top of the base tutorial app:
+- Display location (row, col) for each move in the history list
+- Bolds the currently selected item in the move list
+- Displays button to sort the move list in ascending/descending order
+- Highlights the squares that win
+- Displays a message if the game is a draw
+
+From the project root, run `npm start` to start the dev server and play the game in a local browser.
+
+![Sceenshot of the Tic Tac Toe Game](tic_tac_toe_screenshot.png)
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -42,3 +60,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+# License
+
+MIT
+
