@@ -1,6 +1,10 @@
 # tic_tac_toe-react
 
+[Play the game!](https://kyletolle.github.io/tic_tac_toe-react)
+
 Followed the [tutorial](https://reactjs.org/tutorial/tutorial.html) for [React](https://reactjs.org/) to build this Tic Tac Toe game and learn the library.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Includes these extras on top of the base tutorial app:
 - Display location (row, col) for each move in the history list
@@ -9,13 +13,9 @@ Includes these extras on top of the base tutorial app:
 - Highlights the squares that win
 - Displays a message if the game is a draw
 
-From the project root, run `npm start` to start the dev server and play the game in a local browser.
+## Screenshot
 
 ![Sceenshot of the Tic Tac Toe Game](tic_tac_toe_screenshot.png)
-
----
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -54,13 +54,17 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Deployment
+
+To deploy to Github Pages, I followed the [`create-react-app` deployment](https://facebook.github.io/create-react-app/docs/deployment#github-pages-https-pagesgithubcom) steps.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-# License
+## License
 
 MIT
 
