@@ -1,10 +1,14 @@
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
+  font: 24px "Century Gothic", Futura, sans-serif;
   margin: 20px;
 }
 
 ol, ul {
   padding-left: 30px;
+}
+
+button {
+  font-size: 16px;
 }
 
 .board-row:after {
@@ -21,15 +25,15 @@ ol, ul {
   background: #fff;
   border: 1px solid #999;
   float: left;
-  font-size: 24px;
+  font-size: 72px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
+  line-height: 82px;
+  height: 82px;
   margin-right: -1px;
-  margin-toop: -1px;
+  margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 82px;
 }
 
 .square:focus {
@@ -42,11 +46,11 @@ ol, ul {
 
 .game {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .game-info {
-  margin-left: 20px;
+  margin-top: 1em;
 }
 
 .current-step {
