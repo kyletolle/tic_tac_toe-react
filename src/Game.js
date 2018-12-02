@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-
-function Sort(props) {
-  return (
-    <button
-    onClick={props.onClick}
-    >
-      Sort by {props.value}
-    </button>
-  );
-}
+import Sort from './Sort';
 
 function Square(props) {
   let classNameText = 'square';
