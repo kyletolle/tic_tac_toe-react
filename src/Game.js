@@ -1,21 +1,6 @@
 import React, { Component } from 'react';
 import Sort from './Sort';
-
-function Square(props) {
-  let classNameText = 'square';
-  if (props.isWinningSquare === true) {
-    classNameText += ' winning';
-  }
-
-  return (
-    <button
-      className={classNameText}
-      onClick={props.onClick}
-    >
-      {props.value}
-    </button>
-  );
-}
+import Square from './Square';
 
 class Board extends React.Component {
   renderSquare(i, isWinningSquare) {
