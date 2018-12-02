@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Sort from './Sort';
 import Square from './Square';
+import BoardConfig from './BoardConfig';
 
 class Board extends React.Component {
   renderSquare(i, isWinningSquare) {
@@ -221,10 +222,6 @@ class Contest {
   }
 }
 
-const BoardConfig = {
-  numRows: 3,
-  numColumns: 3
-}
 
 class Index {
   constructor(at) {
