@@ -3,6 +3,7 @@ import Sort from './Sort';
 import Board from './Board';
 import Contest from './Contest';
 import SquareIndex from './SquareIndex';
+import Status from './Status';
 
 class Game extends Component {
   constructor(props) {
@@ -93,15 +94,6 @@ class Game extends Component {
     const contest = new Contest(current.squares);
     contest.hasEnded()
 
-    let status;
-    if (contest.isADraw()) {
-      status = 'Draw!'
-    } else if (contest.hasWinner()) {
-      status = 'Winner: ' + contest.winner;
-    } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-    }
-
     return (
       <div className="game">
         <div className="game-board">
@@ -112,7 +104,10 @@ class Game extends Component {
           />
         </div>
         <div className="game-info">
-          <div>{status}</div>
+          <Status
+            contest={contest}
+            xIsNext={this.state.xIsNext}
+          />
           <div className="move-list">
             <div className="moves">Moves | {this.renderSort()}</div>
             <ol reversed={this.state.sortIsAscending ? false : true}>{this.renderMoves()}</ol>
