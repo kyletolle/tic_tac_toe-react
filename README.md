@@ -1,6 +1,6 @@
 # tic_tac_toe-react
 
-[Play the game!](https://kyletolle.github.io/tic_tac_toe-react)
+[Play the game!](https://kyletolle.github.io/tic_tac_toe-react/)
 
 Followed the [tutorial](https://reactjs.org/tutorial/tutorial.html) for [React](https://reactjs.org/) to build this Tic Tac Toe game and learn the library.
 
