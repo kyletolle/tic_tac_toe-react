@@ -1,7 +1,6 @@
-# Tic Tac Toe
-## in React
+# tic_tac_toe-react
 
-Followed the [tutorial](https://reactjs.org/tutorial/tutorial.html) for [React](https://reactjs.org/) to build this game and learn the library.
+Followed the [tutorial](https://reactjs.org/tutorial/tutorial.html) for [React](https://reactjs.org/) to build this Tic Tac Toe game and learn the library.
 
 Includes these extras on top of the base tutorial app:
 - Display location (row, col) for each move in the history list
